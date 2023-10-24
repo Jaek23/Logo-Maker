@@ -3,13 +3,13 @@ const Square = require("../lib/square")
 const Triangle = require("../lib/triangle")
 
 function generateLogo(data){
-    let shape = " ";
+    let shape = undefined
     if(data.shape === "Circle"){
-        shape = new Circle(data.text, data.textcolor, data.shapecolor)
+        shape = new Circle(data.text, data.text_color, data.shape_color)
     }else if (data.shape === "Square"){
-        shape = new Square(data.text, data.textcolor, data.shapecolor)
+        shape = new Square(data.text, data.text_color, data.shape_color)
     }else{
-        shape = new Triangle(data.text, data.textcolor, data.shapecolor)
+        shape = new Triangle(data.text, data.text_color, data.shape_color)
     }
     return shape.render();
 }

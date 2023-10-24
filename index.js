@@ -13,7 +13,7 @@ const questions = [
     {
         type: 'input',
         message: 'Enter a text color (OR a hexadecimal number).',
-        name: 'textcolor',
+        name: 'text_color',
     },
 
     {
@@ -26,27 +26,27 @@ const questions = [
     {
         type: 'input',
         message: 'Enter a shape color (OR a hexadecimal number).',
-        name: 'shapecolor',
+        name: 'shape_color',
     },
 
-]
+];
 
 function writeToFile(fileName, data) {
-    fs.writeFile(fileName, data, function (err){
-        if (err){
-            return console.log(err)
+    var content = generateLogo(data);
+    fs.writeFile(fileName, content, function (error){
+        if (error){
+            return console.log(error)
         }
-        else {
-            console.log("Generated logo.svg")
-        }
-    })
+        console.log("Generated logo.svg")  
+    });
  }
 
  function init() {
     inquirer.prompt(questions)
     .then (function(data){
-        writeToFile('logo.svg', generateLogo((data)));
-    }) 
+        var fileName = 'logo.svg';
+        writeToFile(fileName, data);
+    });
 }
 
 init();
