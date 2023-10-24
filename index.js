@@ -5,24 +5,22 @@ const generateLogo = require('./utils/generateLogo')
 //Prompt questions for logo requirements 
 const questions = [
     {
-        type: 'input',
-        message: 'Enter text for the logo. (Must not be more than 3 characters.)',
-        name: 'text',
-    },
-
-    {
-        type: 'input',
-        message: 'Enter a text color (OR a hexadecimal number).',
-        name: 'text_color',
-    },
-
-    {
         type: 'list',
         message: 'Select a shape for the logo.',
         choices: ["Circle", "Square", "Triangle"],
         name: 'shape',
     },
 
+    {
+        type: 'input',
+        message: 'Enter text for the logo. (Must not be more than 3 characters.)',
+        name: 'text',
+    },
+    {
+        type: 'input',
+        message: 'Enter a color (OR a hexadecimal number).',
+        name: 'text_color',
+    },
     {
         type: 'input',
         message: 'Enter a shape color (OR a hexadecimal number).',
@@ -32,8 +30,8 @@ const questions = [
 ];
 
 function writeToFile(fileName, data) {
-    var content = generateLogo(data);
-    fs.writeFile(fileName, content, function (error){
+    console.log("Data to be written:", data);
+    fs.writeFile(fileName, data, function (error){
         if (error){
             return console.log(error)
         }
@@ -44,12 +42,11 @@ function writeToFile(fileName, data) {
  function init() {
     inquirer.prompt(questions)
     .then (function(data){
-        var fileName = 'logo.svg';
-        writeToFile(fileName, data);
+        writeToFile('logo.svg', generateLogo((data)));
     });
 }
 
 init();
 
-//inquirer.prompt(questions)
+
 
