@@ -11,7 +11,7 @@ describe('Circle', ()=>{
 });
 
 describe('Sqaure', ()=>{
-    it('should render the shape circle', ()=>{
+    it('should render the shape sqaure', ()=>{
         const shape = new Sqaure('hello', 'red', 'grey');
         shape.render();
         expect(shape.render()).toEqual(`<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"> <rect width="100%" height="100%" fill="grey" /> <text x="150" y="125" font-size="60" text-anchor="middle" fill="red">hello</text> </svg>`)
@@ -19,7 +19,7 @@ describe('Sqaure', ()=>{
 });
 
 describe('Triangle', ()=>{
-    it('should render the shape circle', ()=>{
+    it('should render the shape triangle', ()=>{
         const shape = new Triangle('bye', 'yellow', 'skyblue');
         shape.render();
         expect(shape.render()).toEqual(`<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"> <polygon points="90 10, 180 150, 0 150" fill="skyblue" /> <text x="150" y="125" font-size="60" text-anchor="middle" fill="yellow">bye</text> </svg>`)
