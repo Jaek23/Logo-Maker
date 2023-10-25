@@ -13,6 +13,7 @@ N/A
 MIT License 
 
 ## Walkthrough Video 
+https://drive.google.com/file/d/1FVJ8hQJTL6Dm_9U9VpWugzfWEjK1pT6j/view?usp=sharing
 
 ## Screenshot of example logo 
 ![image](https://github.com/Jaek23/Logo-Maker/assets/141678374/8730fb89-e0a8-4262-80d7-e1a54f668677)
